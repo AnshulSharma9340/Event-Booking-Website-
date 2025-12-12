@@ -4,7 +4,7 @@ A full-stack event booking application built with the MERN stack (MySQL, Express
 
 ![EventFlow](https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1200)
 
-## ✨ Features
+## ✨ Features-
 
 ### User Features
 
