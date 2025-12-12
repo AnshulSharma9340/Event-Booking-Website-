@@ -1,0 +1,148 @@
+@import "tailwindcss";
+
+@theme {
+  --font-heading: "Syne", sans-serif;
+  --font-body: "DM Sans", sans-serif;
+
+  --color-primary: #8B5CF6;
+  --color-primary-light: #A78BFA;
+  --color-primary-dark: #7C3AED;
+  --color-secondary: #F59E0B;
+  --color-accent: #10B981;
+  --color-dark: #0F0A1A;
+  --color-dark-light: #1A1425;
+  --color-dark-card: #231C33;
+  --color-gold: #FFD700;
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-body);
+    background: linear-gradient(135deg, #0F0A1A 0%, #1A1425 50%, #0F0A1A 100%);
+    color: #ffffff;
+    min-height: 100vh;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    background: linear-gradient(135deg, #FFD700 0%, #F59E0B 50%, #FFD700 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .bg-gradient-primary {
+    background: linear-gradient(135deg, #8B5CF6 0%, #A78BFA 50%, #7C3AED 100%);
+  }
+
+  .bg-gradient-dark {
+    background: linear-gradient(180deg, #0F0A1A 0%, #1A1425 100%);
+  }
+
+  .glass {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .glass-dark {
+    background: rgba(15, 10, 26, 0.8);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(139, 92, 246, 0.2);
+  }
+
+  .wavy-bg {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%238B5CF6' fill-opacity='0.1' d='M0,96L48,112C96,128,192,160,288,186.7C384,213,480,235,576,213.3C672,192,768,128,864,128C960,128,1056,192,1152,208C1248,224,1344,192,1392,176L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: 100% 200px;
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-pulse-slow {
+    animation: pulse 4s ease-in-out infinite;
+  }
+
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+  }
+  to {
+    box-shadow: 0 0 40px rgba(139, 92, 246, 0.6);
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0F0A1A;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #8B5CF6 0%, #7C3AED 100%);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #A78BFA 0%, #8B5CF6 100%);
+}
+
+/* Ticket styling */
+.ticket-bg {
+  background: linear-gradient(135deg, #231C33 0%, #1A1425 100%);
+  position: relative;
+}
+
+.ticket-bg::before,
+.ticket-bg::after {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background: #0F0A1A;
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.ticket-bg::before {
+  left: -15px;
+}
+
+.ticket-bg::after {
+  right: -15px;
+}
