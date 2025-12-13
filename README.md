@@ -1,5 +1,5 @@
 # 🎫 EventFlow - Smart Event Booking System
-
+   
 A full-stack event booking application built with the MERN stack (MySQL, Express, React, Node.js) featuring real-time seat availability updates via Socket.IO.
 
 ![EventFlow](https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1200)
